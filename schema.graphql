@@ -1,0 +1,161 @@
+type EventsSummary {
+  id: ID!
+  addInboundProofLibraryForChain: [AddInboundProofLibraryForChain!]!
+    @derivedFrom(field: "eventsSummary")
+  addInboundProofLibraryForChainsCount: BigInt!
+  appConfigUpdated: [AppConfigUpdated!]! @derivedFrom(field: "eventsSummary")
+  appConfigUpdatedsCount: BigInt!
+  enableSupportedOutboundProof: [EnableSupportedOutboundProof!]!
+    @derivedFrom(field: "eventsSummary")
+  enableSupportedOutboundProofsCount: BigInt!
+  hashReceived: [HashReceived!]! @derivedFrom(field: "eventsSummary")
+  hashReceivedsCount: BigInt!
+  invalidDst: [InvalidDst!]! @derivedFrom(field: "eventsSummary")
+  invalidDstsCount: BigInt!
+  ownershipTransferred: [OwnershipTransferred!]!
+    @derivedFrom(field: "eventsSummary")
+  ownershipTransferredsCount: BigInt!
+  packet: [Packet!]! @derivedFrom(field: "eventsSummary")
+  packetsCount: BigInt!
+  packetReceived: [PacketReceived!]! @derivedFrom(field: "eventsSummary")
+  packetReceivedsCount: BigInt!
+  relayerParams: [RelayerParams!]! @derivedFrom(field: "eventsSummary")
+  relayerParamssCount: BigInt!
+  setChainAddressSize: [SetChainAddressSize!]!
+    @derivedFrom(field: "eventsSummary")
+  setChainAddressSizesCount: BigInt!
+  setDefaultAdapterParamsForChainId: [SetDefaultAdapterParamsForChainId!]!
+    @derivedFrom(field: "eventsSummary")
+  setDefaultAdapterParamsForChainIdsCount: BigInt!
+  setDefaultConfigForChainId: [SetDefaultConfigForChainId!]!
+    @derivedFrom(field: "eventsSummary")
+  setDefaultConfigForChainIdsCount: BigInt!
+  setLayerZeroToken: [SetLayerZeroToken!]! @derivedFrom(field: "eventsSummary")
+  setLayerZeroTokensCount: BigInt!
+  setRemoteUln: [SetRemoteUln!]! @derivedFrom(field: "eventsSummary")
+  setRemoteUlnsCount: BigInt!
+  setTreasury: [SetTreasury!]! @derivedFrom(field: "eventsSummary")
+  setTreasurysCount: BigInt!
+  withdrawNative: [WithdrawNative!]! @derivedFrom(field: "eventsSummary")
+  withdrawNativesCount: BigInt!
+  withdrawZRO: [WithdrawZRO!]! @derivedFrom(field: "eventsSummary")
+  withdrawZROsCount: BigInt!
+}
+
+type AddInboundProofLibraryForChain {
+  id: ID!
+  chainId_: BigInt!
+  lib: String!
+  eventsSummary: String!
+}
+type AppConfigUpdated {
+  id: ID!
+  userApplication: String!
+  configType: BigInt!
+  newConfig: String!
+  eventsSummary: String!
+}
+type EnableSupportedOutboundProof {
+  id: ID!
+  chainId_: BigInt!
+  proofType: BigInt!
+  eventsSummary: String!
+}
+type HashReceived {
+  id: ID!
+  srcChainId: BigInt!
+  oracle: String!
+  lookupHash: String!
+  blockData: String!
+  confirmations: BigInt!
+  eventsSummary: String!
+}
+type InvalidDst {
+  id: ID!
+  srcChainId: BigInt!
+  srcAddress: String!
+  dstAddress: String!
+  nonce: BigInt!
+  payloadHash: String!
+  eventsSummary: String!
+}
+type OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+  eventsSummary: String!
+}
+type Packet {
+  id: ID!
+  payload: String!
+  eventsSummary: String!
+}
+type PacketReceived {
+  id: ID!
+  srcChainId: BigInt!
+  srcAddress: String!
+  dstAddress: String!
+  nonce: BigInt!
+  payloadHash: String!
+  eventsSummary: String!
+}
+type RelayerParams {
+  id: ID!
+  adapterParams: String!
+  outboundProofType: BigInt!
+  eventsSummary: String!
+}
+type SetChainAddressSize {
+  id: ID!
+  chainId_: BigInt!
+  size: BigInt!
+  eventsSummary: String!
+}
+type SetDefaultAdapterParamsForChainId {
+  id: ID!
+  chainId_: BigInt!
+  proofType: BigInt!
+  adapterParams: String!
+  eventsSummary: String!
+}
+type SetDefaultConfigForChainId {
+  id: ID!
+  chainId_: BigInt!
+  inboundProofLib: BigInt!
+  inboundBlockConfirm: BigInt!
+  relayer: String!
+  outboundProofType: BigInt!
+  outboundBlockConfirm: BigInt!
+  oracle: String!
+  eventsSummary: String!
+}
+type SetLayerZeroToken {
+  id: ID!
+  tokenAddress: String!
+  eventsSummary: String!
+}
+type SetRemoteUln {
+  id: ID!
+  chainId_: BigInt!
+  uln: String!
+  eventsSummary: String!
+}
+type SetTreasury {
+  id: ID!
+  treasuryAddress: String!
+  eventsSummary: String!
+}
+type WithdrawNative {
+  id: ID!
+  msgSender: String!
+  to: String!
+  amount: BigInt!
+  eventsSummary: String!
+}
+type WithdrawZRO {
+  id: ID!
+  msgSender: String!
+  to: String!
+  amount: BigInt!
+  eventsSummary: String!
+}

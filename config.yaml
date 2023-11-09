@@ -1,0 +1,63 @@
+name: UltraLightNodeV2
+description: layerzero mainnet ultra light node
+networks:
+- id: 1
+  start_block: 0
+  contracts:
+  - name: UltraLightNodeV2
+    address:
+    - 0x4D73AdB72bC3DD368966edD0f0b2148401A178E2
+    abi_file_path: null
+    handler: ./src/EventHandlers.bs.js
+    events:
+    - event: AddInboundProofLibraryForChain(uint16 indexed chainId, address lib)
+      requiredEntities:
+      - name: EventsSummary
+    - event: AppConfigUpdated(address indexed userApplication, uint256 indexed configType, bytes newConfig)
+      requiredEntities:
+      - name: EventsSummary
+    - event: EnableSupportedOutboundProof(uint16 indexed chainId, uint16 proofType)
+      requiredEntities:
+      - name: EventsSummary
+    - event: HashReceived(uint16 indexed srcChainId, address indexed oracle, bytes32 lookupHash, bytes32 blockData, uint256 confirmations)
+      requiredEntities:
+      - name: EventsSummary
+    - event: InvalidDst(uint16 indexed srcChainId, bytes srcAddress, address indexed dstAddress, uint64 nonce, bytes32 payloadHash)
+      requiredEntities:
+      - name: EventsSummary
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+      requiredEntities:
+      - name: EventsSummary
+    - event: Packet(bytes payload)
+      requiredEntities:
+      - name: EventsSummary
+    - event: PacketReceived(uint16 indexed srcChainId, bytes srcAddress, address indexed dstAddress, uint64 nonce, bytes32 payloadHash)
+      requiredEntities:
+      - name: EventsSummary
+    - event: RelayerParams(bytes adapterParams, uint16 outboundProofType)
+      requiredEntities:
+      - name: EventsSummary
+    - event: SetChainAddressSize(uint16 indexed chainId, uint256 size)
+      requiredEntities:
+      - name: EventsSummary
+    - event: SetDefaultAdapterParamsForChainId(uint16 indexed chainId, uint16 indexed proofType, bytes adapterParams)
+      requiredEntities:
+      - name: EventsSummary
+    - event: SetDefaultConfigForChainId(uint16 indexed chainId, uint16 inboundProofLib, uint64 inboundBlockConfirm, address relayer, uint16 outboundProofType, uint64 outboundBlockConfirm, address oracle)
+      requiredEntities:
+      - name: EventsSummary
+    - event: SetLayerZeroToken(address indexed tokenAddress)
+      requiredEntities:
+      - name: EventsSummary
+    - event: SetRemoteUln(uint16 indexed chainId, bytes32 uln)
+      requiredEntities:
+      - name: EventsSummary
+    - event: SetTreasury(address indexed treasuryAddress)
+      requiredEntities:
+      - name: EventsSummary
+    - event: WithdrawNative(address indexed msgSender, address indexed to, uint256 amount)
+      requiredEntities:
+      - name: EventsSummary
+    - event: WithdrawZRO(address indexed msgSender, address indexed to, uint256 amount)
+      requiredEntities:
+      - name: EventsSummary
